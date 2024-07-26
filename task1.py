@@ -20,17 +20,19 @@ def coin_set_parameters(coin_set):
     return len(coin_set), s
 
 
-
 def find_min_coins(coins,val):
     n=len(coins)
-    K = [{"sum":0,"coinSet":{},"coinNumber":0}  for s in range(val + 1)]
-    for s in range(val+1):
-            options=[(i,coins[i] + K[s - coins[i]]["sum"]) \
-                     for i in range(n) if coins[i]<=s]
-            minOption=max(options,key=lambda x:x[1])
-            K[s]=
-
-
+    K = [[{"sum":0,"coinSet":{},"coinNumber":0} for s in range(val + 1)] for i in range(n+1)]
+    for i in range(n):
+        for s in range(val):
+            if coins[i]<=s:
+                val_temp=coins[i] + K[i][val - coins[i]]["sum"]
+                if val_temp>K[s+1][i]["sum"]:
+                    K[s+1][i+1]["sum"]= coins[i] + K[val - coins[s+1]][i]["sum"]
+                    K[s+1][i+1]["coinSet"][coins[i]]+=1
+                    K[s+1][i+1]["coinNumber"]+=1
+                else:
+                    K[s+1][i+1]= K[s+1][i]
     return K[n][val]
 
 
