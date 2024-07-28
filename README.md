@@ -1,1 +1,4 @@
 # goit-algo-hw-09
+
+Both the greedy algorithm and the dynamic algorithm work with the speed of O(n). However, for certain sets of coins (for example, 1,2,4,8, and so on in powers of two to infinity), the greedy algorithm can work with the speed of O(ln(n))
+However, the greedy algorithm in certain cases can allow a non-optimal choice of coins. Although for those coins that people usually use, for example, 50, 25 10 5 2 1, for these denominations, the greedy algorithm will give the same optimal result as the algorithm based on dynamic programming or complete enumeration. We can say that the set of coins is optimized for the greedy algorithm. And if the coins have non-standard denominations, for example 7, 6, then the greedy algorithm will sometimes give ineffective solutions, and dynamic programming will work with the same speed as the greedy algorithm with the speed of O(n) and give optimal solutions.
