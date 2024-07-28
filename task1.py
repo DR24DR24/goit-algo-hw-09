@@ -23,8 +23,8 @@ def coin_set_parameters(coin_set):
 def find_min_coins(coins,val):
     n=len(coins)
     K = [[{"sum":0,"coinSet":{},"coinNumber":0} for s in range(val + 1)] for i in range(n+1)]
-    for i in range(n):
-        for s in range(val):
+    for s in range(val):   
+        for i in range(n):
             if coins[i]<=s:
                 val_temp=coins[i] + K[i][val - coins[i]]["sum"]
                 if val_temp>K[s+1][i]["sum"]:
