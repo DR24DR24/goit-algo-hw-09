@@ -13,20 +13,13 @@ coins=[7, 6]
 
 print(find_coins_greedy(coins,12))
 
-# def coin_set_parameters(coin_set):
-#     s=0
-#     for i,val in coin_set.items():
-#         s+=val
-#     return len(coin_set), s
-
-
 
 def find_min_coins(coins,val):
     """ The algorithm is designed for an infinite number of coins of each denomination.
  The algorithm is designed, among other things, 
  for situations when not any sum can be composed of existing coin denominations
 Table K is one-dimensional
-The main idea of ​​the algorithm is that starting with the smallest sum,
+The main idea of the algorithm is that starting with the smallest sum,
  we try to find the optimal combination of coins at each step (in a cycle by sum).
 We try to add all of the existing coin denominations in turn. When we add another coin, 
 we add the coin to the set of coins that are in the cell of table k 
